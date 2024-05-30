@@ -13,7 +13,7 @@ int partition(vector<T>& v, int left, int right) {
   return pivot;
 }
 
-// Not Stable sort
+// Not a Stable sort
 // Time Complexity : O(nlogn)
 // Space Complexity : O(logn)
 template <typename T>
