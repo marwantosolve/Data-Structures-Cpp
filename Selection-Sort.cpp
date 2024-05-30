@@ -5,15 +5,15 @@ using namespace std;
 // Time Complexity : O(n^2)
 // Space Complexity : O(1)
 template <typename T>
-void selectionSort(T arr[], int n) {
-  for (int i = 0; i < n - 1; i++) {
+void selectionSort(vector<T>& v) {
+  for (int i = 0; i < v.size() - 1; i++) {
     int minIndex = i;
-    for (int j = i + 1; j < n; j++) {
-      if (arr[j] < arr[minIndex]) {
+    for (int j = i + 1; j < v.size(); j++) {
+      if (v[j] < v[minIndex]) {
         minIndex = j;
       }
     }
-    swap(arr[minIndex], arr[i]);
+    swap(v[minIndex], v[i]);
   }
   return;
 }
