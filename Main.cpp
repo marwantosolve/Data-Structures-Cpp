@@ -10,6 +10,6 @@ void print(vector<T> v) {
 };
 
 int main() {
-  // you can try or run anything here
+  // You can Try or Run anything here
   return 0;
 }
