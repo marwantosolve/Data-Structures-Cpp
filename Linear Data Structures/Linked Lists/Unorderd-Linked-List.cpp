@@ -1,4 +1,4 @@
-#include "Linked-List.cpp"
+#include "Linked-List-Type.cpp"
 
 template <class Type>
 class unorderedLinkedList : public linkedListType<Type> {
@@ -16,7 +16,7 @@ template <class Type>
 bool unorderedLinkedList<Type>::search(const Type& searchItem) const {
   nodeType<Type>* current;
   bool found = false;
-  current = first;
+  current = this->first;
   while (current != NULL && !found)
     if (current->info == searchItem)
       found = true;
@@ -30,10 +30,10 @@ void unorderedLinkedList<Type>::insertFirst(const Type& newItem) {
   nodeType<Type>* newNode;
   newNode = new nodeType<Type>;
   newNode->info = newItem;
-  newNode->link = first;
-  first = newNode;
-  count++;
-  if (last == NULL) last = newNode;
+  newNode->link = this->first;
+  this->first = newNode;
+  this->count++;
+  if (this->last == NULL) this->last = newNode;
 }
 
 template <class Type>
@@ -42,17 +42,15 @@ void unorderedLinkedList<Type>::insertLast(const Type& newItem) {
   newNode = new nodeType<Type>;
   newNode->info = newItem;
   newNode->link = NULL;
-  if (first == NULL)
-
-  {
-    first = newNode;
-    last = newNode;
-    count++;
+  if (this->first == NULL) {
+    this->first = newNode;
+    this->last = newNode;
+    this->count++;
   } else {
-    last->link = newNode;
-    last = newNode;
+    this->last->link = newNode;
+    this->last = newNode;
 
-    count++;
+    this->count++;
   }
 }
 
@@ -61,20 +59,20 @@ void unorderedLinkedList<Type>::deleteNode(const Type& deleteItem) {
   nodeType<Type>* current;
   nodeType<Type>* trailCurrent;
   bool found;
-  if (first == NULL)
+  if (this->first == NULL)
     cout << "Cannot delete from an empty list." << endl;
   else {
-    if (first->info == deleteItem) {
-      current = first;
-      first = first->link;
-      count--;
-      if (first == NULL) last = NULL;
+    if (this->first->info == deleteItem) {
+      current = this->first;
+      this->first = this->first->link;
+      this->count--;
+      if (this->first == NULL) this->last = NULL;
       delete current;
     } else {
       found = false;
-      trailCurrent = first;
+      trailCurrent = this->first;
 
-      current = first->link;
+      current = this->first->link;
 
       while (current != NULL && !found) {
         if (current->info != deleteItem) {
@@ -85,8 +83,8 @@ void unorderedLinkedList<Type>::deleteNode(const Type& deleteItem) {
       }
       if (found) {
         trailCurrent->link = current->link;
-        count--;
-        if (last == current) last = trailCurrent;
+        this->count--;
+        if (this->last == current) this->last = trailCurrent;
         delete current;
       } else
         cout << "The item to be deleted is not in " << "the list." << endl;

@@ -160,22 +160,18 @@ void linkedListType<Type>::copyList(const linkedListType<Type>& otherList) {
     count = 0;
   } else {
     current = otherList.first;
-
     count = otherList.count;
-
     first = new nodeType<Type>;
     first->info = current->info;
     first->link = NULL;
     last = first;
     current = current->link;
-
     while (current != NULL) {
       newNode = new nodeType<Type>;
       newNode->info = current->info;
       newNode->link = NULL;
       last->link = newNode;
       last = newNode;
-
       current = current->link;
     }
   }

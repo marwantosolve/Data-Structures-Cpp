@@ -1,5 +1,4 @@
 // #include ""
-
 template <typename T>
 void print(vector<T> v) {
   cout << "[ ";
@@ -9,7 +8,4 @@ void print(vector<T> v) {
   cout << "]\n";
 };
 
-int main() {
-  // you can use any thing here
-  return 0;
-}
+int main() { return 0; }
