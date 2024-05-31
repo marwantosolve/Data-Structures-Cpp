@@ -8,4 +8,7 @@ void print(vector<T> v) {
   cout << "]\n";
 };
 
-int main() { return 0; }
+int main() {
+  // you can try or run anything here
+  return 0;
+}
