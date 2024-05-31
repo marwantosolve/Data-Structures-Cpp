@@ -25,7 +25,7 @@ class AVL {
   void inorder(AVLNode<T> *no);
   void postorder(AVLNode<T> *no);
   bool searchInAVL(AVLNode<T> *no, T value);
-  bool isExist(AVLNode<T> *no);
+  bool isEmptyNode(AVLNode<T> *no);
   int getHeight(AVLNode<T> *no);
   int getBalance(AVLNode<T> *no);
 
@@ -58,7 +58,7 @@ AVL<T>::~AVL() {
 }
 
 template <class T>
-bool AVL<T>::isExist(AVLNode<T> *no) {
+bool AVL<T>::isEmptyNode(AVLNode<T> *no) {
   if (no == nullptr) {
     return true;
   } else {
@@ -68,7 +68,7 @@ bool AVL<T>::isExist(AVLNode<T> *no) {
 
 template <class T>
 bool AVL<T>::isEmptyTree(void) {
-  return isExist(this->root);
+  return isEmptyNode(this->root);
 }
 
 template <class T>
