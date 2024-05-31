@@ -9,8 +9,10 @@ template <typename T>
 void insertionSort(vector<T>& v) {
   for (int i = 1; i < v.size(); i++) {
     T key = v[i];
-    for (j = i; j > 0 && key > v[j - 1]; j--) {
-      a[j] = a[j - 1];
+    int j = i;
+    while (j > 0 && key < v[j - 1]) {
+      v[j] = v[j - 1];
+      j--;
     }
     v[j] = key;
   }
