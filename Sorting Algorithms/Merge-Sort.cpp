@@ -20,6 +20,7 @@ void merge(vector<T>& v, int left, int right, int mid) {
 // Stable sort
 // Time Complexity : O(nlogn)
 // Space Complexity : O(n)
+
 template <typename T>
 void mergeSort(vector<T>& v, int left, int right) {
   if (left >= right) return;
