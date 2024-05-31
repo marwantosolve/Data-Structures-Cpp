@@ -8,7 +8,7 @@ void maxHeapify(vector<eleType>& v, int n, int i) {
   int maxx = i;
   if (l < n && v[l] > v[maxx]) maxx = l;
   if (r < n && v[r] > v[maxx]) maxx = r;
-  if (max != i) {
+  if (maxx != i) {
     swap(v[i], v[maxx]);
     maxHeapify(v, n, maxx);
   }
