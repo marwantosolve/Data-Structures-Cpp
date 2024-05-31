@@ -25,7 +25,7 @@ class AVL {
   void inorder(AVLNode<T> *no);
   void postorder(AVLNode<T> *no);
   bool searchInAVL(AVLNode<T> *no, T value);
-  bool destroyAVL(AVLNode<T> *no);
+  bool isExist(AVLNode<T> *no);
   int getHeight(AVLNode<T> *no);
   int getBalance(AVLNode<T> *no);
 
@@ -37,7 +37,7 @@ class AVL {
   void insert(T value);
   bool search(T value);
   void remove(T value);
-  bool empty(void);
+  bool isEmptyTree(void);
 };
 
 template <class T>
@@ -52,13 +52,13 @@ AVL<T>::AVL(T value) {
 
 template <class T>
 AVL<T>::~AVL() {
-  while (!this->empty()) {
+  while (!this->isEmptyTree()) {
     this->root = removeFromAVL(this->root, this->root->val);
   }
 }
 
 template <class T>
-bool AVL<T>::destroyAVL(AVLNode<T> *no) {
+bool AVL<T>::isExist(AVLNode<T> *no) {
   if (no == nullptr) {
     return true;
   } else {
@@ -67,8 +67,8 @@ bool AVL<T>::destroyAVL(AVLNode<T> *no) {
 }
 
 template <class T>
-bool AVL<T>::empty(void) {
-  return destroyAVL(this->root);
+bool AVL<T>::isEmptyTree(void) {
+  return isExist(this->root);
 }
 
 template <class T>
