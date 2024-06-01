@@ -49,10 +49,10 @@ void binaryTreeType<elemType>::levelorder(binaryTreeNode<elemType> *p) const {
   q.push(p);
   while (!q.empty()) {
     binaryTreeNode<elemType> *node = q.front();
-    q.pop();
     cout << node->info << " ";
     if (node->llink != NULL) q.push(node->llink);
     if (node->rlink != NULL) q.push(node->rlink);
+    q.pop();
   }
 }
 
