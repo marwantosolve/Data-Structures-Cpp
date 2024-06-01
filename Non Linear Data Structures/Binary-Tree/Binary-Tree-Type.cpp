@@ -21,6 +21,8 @@ class binaryTreeType {
 
   void postorderTraversal() const;
 
+  void levelorderTraversal() const;
+
   int treeHeight() const;
 
   int treeNodeCount() const;
@@ -50,6 +52,8 @@ class binaryTreeType {
 
   void postorder(binaryTreeNode<elemType> *p) const;
 
+  void levelorder(binaryTreeNode<elemType> *p) const;
+
   int height(binaryTreeNode<elemType> *p) const;
 
   int max(int x, int y) const;
@@ -58,6 +62,29 @@ class binaryTreeType {
 
   int leavesCount(binaryTreeNode<elemType> *p) const;
 };
+
+template <class elemType>
+void binaryTreeType<elemType>::levelorder(binaryTreeNode<elemType> *p) const {
+  if (p == NULL) return;
+
+  queue<binaryTreeNode<elemType> *> q;
+  q.push(p);
+
+  while (!q.empty()) {
+    binaryTreeNode<elemType> *node = q.front();
+    q.pop();
+
+    cout << node->info << " ";
+
+    if (node->llink != NULL) q.push(node->llink);
+    if (node->rlink != NULL) q.push(node->rlink);
+  }
+}
+
+template <class elemType>
+void binaryTreeType<elemType>::levelorderTraversal() const {
+  levelorder(root);
+}
 
 template <class elemType>
 bool binaryTreeType<elemType>::isEmpty() const {
