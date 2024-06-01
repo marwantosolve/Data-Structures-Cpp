@@ -1,11 +1,11 @@
-#include "../Non Linear Data Structures/HEAP/Max-Heap.cpp"
-#include "../Non Linear Data Structures/HEAP/Min-Heap.cpp"
+#include "Max-Heap.cpp"
+#include "Min-Heap.cpp"
 
 // Not a Stable sort
 // Time Complexity : O(nlogn)
 // Space Complexity : O(1)
 
-// Min Heap -> Dcscending
+// Min Heap --heapSort--> Dcscending
 template <class eleType>
 void minHeapSort(vector<eleType>& v) {
   int n = v.size();
@@ -16,7 +16,7 @@ void minHeapSort(vector<eleType>& v) {
   }
 }
 
-// Max Heap -> Acscending
+// Max Heap --heapSort--> Acscending
 template <class eleType>
 void maxHeapSort(vector<eleType>& v) {
   int n = v.size();
